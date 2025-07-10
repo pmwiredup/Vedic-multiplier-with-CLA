@@ -1,10 +1,10 @@
-# 8-bit Vedic Multiplier with Carry Look-Ahead Adders
+# 16-bit Vedic Multiplier with Carry Look-Ahead Adders
 
 ## Overview
 
-This repository contains a **high-speed 8-bit Vedic multiplier** implemented in Verilog, utilizing the Urdhva Tiryakbhyam algorithm from Vedic mathematics. The design is optimized for speed and area by integrating **carry look-ahead adders (CLA)** at every addition stage, significantly improving the overall performance of the multiplication process.
+This repository contains a **high-speed 16-bit Vedic multiplier** implemented in Verilog, utilizing the Urdhva Tiryakbhyam algorithm from Vedic mathematics. The design is optimized for speed and area by integrating **carry look-ahead adders (CLA)** at every addition stage, significantly improving the overall performance of the multiplication process.
 
-The Vedic multiplier architecture is modular, constructed from 2-bit and 4-bit building blocks, and scales efficiently to 8 bits. This approach enables **parallel processing** and reduces propagation delay, making it suitable for modern digital systems where speed and power efficiency are critical.
+The Vedic multiplier architecture is modular, constructed from 2-bit, 4-bit and 8-bit building blocks, and scales efficiently to 16 bits. This approach enables **parallel processing** and reduces propagation delay, making it suitable for modern digital systems where speed and power efficiency are critical.
 
 ---
 
@@ -12,7 +12,7 @@ The Vedic multiplier architecture is modular, constructed from 2-bit and 4-bit b
 
 - **8-bit Vedic multiplier** using Urdhva Tiryakbhyam sutra
 - Modular, hierarchical design (2-bit, 4-bit, 8-bit multipliers)
-- **Carry look-ahead adders** (4, 6, 8, and 12-bit) for fast addition of partial products
+- **Carry look-ahead adders** (4, 6, 8, 12, 16 and 24-bit) for fast addition of partial products
 - Fully synthesizable Verilog code
 - Suitable for FPGA and ASIC implementations
 
@@ -62,8 +62,9 @@ The project is structured as follows:
 - `vedicmult_2bit`: 2-bit Vedic multiplier module
 - `vedicmult_4bit`: 4-bit Vedic multiplier using four 2-bit multipliers and CLA adders
 - `vedicmult_8bit`: 8-bit Vedic multiplier using four 4-bit multipliers and CLA adders
+- `vedicmult_16bit`: 16-bit Vedic multiplier using four 4-bit multipliers and CLA adders
 - `HA`: Half Adder module
-- `FA_lookahead_*bit`: Carry Look-Ahead Adder modules (4, 6, 8, 12-bit)
+- `FA_lookahead_*bit`: Carry Look-Ahead Adder modules (4, 6, 8, 12, 16, 24-bit)
 
 Each higher-order multiplier is constructed hierarchically from lower-order multipliers and fast adders, enabling efficient scaling and parallelism.
 
